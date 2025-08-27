@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+    <!-- Header Section -->
+    <top>
+        <VBox spacing="0">
+            <!-- Title Header -->
+            <HBox styleClass="header" alignment="CENTER" spacing="20">
+                <Label text="🎬 MovieScout" styleClass="header-title" />
+            </HBox>
+            
+            <!-- Search and Controls Section -->
+            <HBox style="-fx-padding: 20 30 20 30;" spacing="20" alignment="CENTER">
+                <Region HBox.hgrow="SOMETIMES" />
+                
+                <TextField fx:id="searchField" promptText="🔍 Discover amazing movies..." 
+                          styleClass="search-field" prefWidth="400" />
+                
+                <ComboBox fx:id="genreComboBox" promptText="🎭 Filter by genre" 
+                         styleClass="combo-box" prefWidth="180" />
+                
+                <Button fx:id="watchListButton" text="📚 My Watch List" 
+                       styleClass="button watch-list-button" />
+                
+                <ToggleButton fx:id="themeToggle" text="🌙 Dark Mode" 
+                             styleClass="button toggle-button" />
+                
+                <Region HBox.hgrow="SOMETIMES" />
+            </HBox>
+        </VBox>
+    </top>
+    
+    <!-- Main Content Area -->
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true" styleClass="scroll-pane" 
+                   hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
+            <FlowPane fx:id="moviesFlowPane" styleClass="movies-container" 
+                     alignment="CENTER" columnHalignment="CENTER" />
+        </ScrollPane>
+    </center>
+</BorderPane>
